@@ -33,11 +33,11 @@
   <h1 align="center">war_card_game</h1>
 
   <p align="center">
-    <h2>Monolithic Rails app consuming 3rd party NHL API</h2>
+    <h2>Exploring Node.js via a toy apps</h2>
     <br />
-    <img src="app/assets/images/mcdavid.png" alt="alt_text" >
+    <img src="app/assets/images/mcdavid.png" alt="no_image_yet" >
     <br />
-    <a href="https://gitlab.com/dword4/nhlapi/-/blob/master/stats-api.md"><strong>Explore the docs »</strong></a>
+    <a href="#"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/marchandmd/war_card_game/issues">Report Bug</a>
@@ -64,7 +64,6 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#schema">Schema</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
@@ -77,29 +76,26 @@
 
 ## About The Project
 
+Building momentum with Node.js via a simple toy app
+
 What did I learn building this:
 
-  - practicing VIM intermediate motions
-  - Node.js, Mocha, Chai
-  - Basic debugging in IDE
-  - documentation, and maintenance of project documentation
-  - Test Driven Development
+-   practicing VIM intermediate motions
+-   Node.js, Mocha, Chai
+-   Basic debugging in IDE
+-   documentation, and maintenance of project documentation
+-   Test Driven Development
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With
 
--   [![Node][ruby.com]][ruby-url]
--   [![Rspec][rspec.com]][rspec-url]
+-   [![Node][node.com]][node-url]
 
-Gems used in testing, development:
+Packages used in testing, development:
 
-- `pg`
-- `faraday`
-- `pry-rails`
-- `factory_bot_rails`
-- `shoulda-matchers`
-
+-   `mocha`
+-   `chai`
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -107,19 +103,13 @@ Gems used in testing, development:
 
 ## Getting Started
 
-Until this app is deployed to a SaaS site, this project will only be living in a development environment
-
 clone this repo, and `cd` into the root directory
 
-setup the database (if you have postgres on your local machine) with `rails db:{create,seed}`
-
-run `rails nhl:seed_regular_season_games` and `rails nhl:add_teams`
-
-then spin up the server with `rails s`
+`npm test`
 
 ### Prerequisites
 
-ruby v2.7.4
+node v19.7.0
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -127,16 +117,7 @@ ruby v2.7.4
 
 ## Usage
 
-The intended usage of this app will be natively in the browser, though with the intention of scaling to a full remote UX to be accessible via mobile devices.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!--SCHEMA  EXAMPLES -->
-
-## Schema
-<div>
-    <img src="app/assets/images/schema_1.png" alt="alt_text" >
-</div>
+Play War right in the terminal using the Node.js runtime environment
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -144,18 +125,13 @@ The intended usage of this app will be natively in the browser, though with the 
 <!-- ROADMAP -->
 
 ## Roadmap
-- [x] Remove unneeded files from `poros` dir
-- [ ] Add additional copy to the home page/landing page
-- [ ] Add ability to log out
-- [ ] Complete user stories 4 - 6
-- [ ] Re-factor linescores/scores controller to use a Facade to process info from Linescores NhlApiService
-- [ ] deploy to either Heroku, Render or Fly.IO
-- [ ] troubleshoot app not respecting FILE path
-- [ ] Integration testing for signing up
-- [ ] Refactor `sessions#create` to extract and DRY up the method
-- [ ] Refactor `sessions#create` to address the complexity around creating a new user and how to populate the password and or update it upon user creation when using Oauth
-- [ ] Troubleshoot the zulu time format of the game date from the API for accuracy with testing
-- [ ] Update to use dynamic data VS using the rake task to seed the database
+
+- [ ] Update readme for errors and typos
+- [ ] test and implement `Deck`
+- [ ] test and implement `Game`
+- [ ] test and implement `Player`
+- [ ] test and implement `Turn`
+- [ ] research test coverage packages for Node/Mocha/Chai
 
 See the [open issues](https://github.com/marchandmd/war_card_game/issues) for a full list of proposed features (and known issues).
 
@@ -206,7 +182,6 @@ Use this space to list resources you find helpful and would like to give credit 
 -   [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
 -   [Img Shields](https://shields.io)
 -   [GitHub Pages](https://pages.github.com)
--   [Rubocop](https://rubocop.org/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -229,7 +204,8 @@ Use this space to list resources you find helpful and would like to give credit 
 [bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
 [bootstrap-url]: https://getbootstrap.com
 [ruby.com]: https://img.shields.io/badge/ruby-v2.7.4-red
-[node.com]: https://img.shields.io/badge/ruby-v2.7.4-red
+[node.com]: https://img.shields.io/badge/Node.js-Node.js-yellow
 [ruby-url]: https://ruby-doc.org/core-2.7.2/
+[node-url]: https://nodejs.dev/en/
 [rspec.com]: https://img.shields.io/badge/rspec-v3.12-success
 [rspec-url]: https://rspec.info/documentation/
