@@ -3,16 +3,19 @@ var Deck = require("../lib/deck.js")
 var Card = require("../lib/card.js")
 
 describe("Deck", function () {
-
-    let cards = null;
-    let deck = null;
+    let card1 = null
+    let card2 = null
+    let card3 = null
+    let card4 = null
+    let cards = null
+    let deck = null
 
     beforeEach(function () {
-        var card1 = new Card("hearts", "2", 1)
-        var card2 = new Card("clubs", "3", 2)
-        var card3 = new Card("diamonds", "Jack", 11)
-        cards = [card1, card2, card3];
-        deck = new Deck(cards);
+        card1 = new Card("hearts", "2", 1)
+        card2 = new Card("clubs", "3", 2)
+        card3 = new Card("diamonds", "Jack", 11)
+        cards = [card1, card2, card3]
+        deck = new Deck(cards)
     })
 
     it("should be a function", function () {
@@ -25,16 +28,19 @@ describe("Deck", function () {
     })
 
     it("should be able to retrieve #rankOfCardAt", function () {
-        var card1 = new Card("hearts", "2", 1)
-        var cards = [card1]
-        var deck = new Deck(cards)
-
         expect(deck.rankOfCardAt(0)).to.eq(1)
     })
 
     describe("#highRankingCards", function () {
-        it("retrieves cards valued 11 or higher", function () {
+        it("retrieves cards ranked 11 or higher", function () {
             var expected = []
+
+            deck.cards.forEach((card) => {
+                if (card.rank >= 11) {
+                    expected.push(card)
+                }
+            })
+            expect(expected.length).to.eq(1)
         })
     })
 })
